@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
-import { ShoppingCart, User, Menu, X, Search } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { useMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +14,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // Navigation links
-  const navLinks = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Productos', path: '/products' },
-    { name: 'Contacto', path: '/contact' }
-  ];
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
@@ -35,11 +26,15 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link key={link.path} to={link.path} className="text-gray-700 hover:text-primary transition-colors">
-                {link.name}
-              </Link>
-            ))}
+            <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/products" className="text-gray-700 hover:text-primary transition-colors">
+              Products
+            </Link>
+            <Link to="/account" className="text-gray-700 hover:text-primary transition-colors">
+              Account
+            </Link>
           </div>
 
           {/* Cart and Mobile Menu Button */}
@@ -72,11 +67,27 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden pt-4 pb-2 space-y-2">
-            {navLinks.map((link) => (
-              <Link key={link.path} to={link.path} className="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md" onClick={() => setIsMenuOpen(false)}>
-                {link.name}
-              </Link>
-            ))}
+            <Link 
+              to="/" 
+              className="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/products" 
+              className="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Products
+            </Link>
+            <Link 
+              to="/account" 
+              className="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Account
+            </Link>
           </div>
         )}
       </div>

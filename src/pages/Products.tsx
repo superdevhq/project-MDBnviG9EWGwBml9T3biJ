@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -120,7 +121,7 @@ const Products = () => {
   return (
     <Layout>
       <div className="container-custom py-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 min-h-[calc(100vh-200px)]">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           {/* Filters - Mobile Toggle */}
           <div className="w-full md:hidden mb-4">
             <Button 
@@ -134,8 +135,8 @@ const Products = () => {
           </div>
           
           {/* Filters Sidebar */}
-          <aside className={`w-full md:w-64 md:block h-full ${showFilters ? 'block' : 'hidden'}`}>
-            <div className="bg-white rounded-lg border p-4 sticky top-24 h-full">
+          <aside className={`w-full md:w-64 md:block ${showFilters ? 'block' : 'hidden'}`}>
+            <div className="bg-white rounded-lg border p-4 sticky top-24">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">Filters</h2>
                 <Button 

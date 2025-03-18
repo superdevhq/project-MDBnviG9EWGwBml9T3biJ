@@ -11,7 +11,6 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderTracking from "./pages/OrderTracking";
 import Account from "./pages/Account";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,7 +29,6 @@ const App = () => (
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order-tracking/:id" element={<OrderTracking />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
