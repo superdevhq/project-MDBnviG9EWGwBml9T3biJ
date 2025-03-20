@@ -224,7 +224,7 @@ const Products = () => {
               </div>
             </div>
           </aside>
-          
+
           {/* Products Grid */}
           <div className="flex-1">
             {/* Active Filters */}
