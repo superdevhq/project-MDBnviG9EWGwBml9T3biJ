@@ -17,8 +17,8 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Fixed the syntax error by adding the missing closing parenthesis
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // Introduciendo un error de sintaxis aquí - falta un paréntesis de cierre
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
