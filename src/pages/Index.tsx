@@ -19,7 +19,7 @@ return (
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 <div className="space-y-6">
 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-Discover Quality, <br />
+Elevate Your Lifestyle, <br />
 <span className="text-primary">Delivered with Speed</span>
 </h1>
 <p className="text-lg text-gray-600 max-w-md">
